@@ -20,7 +20,6 @@ ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH
 RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install 12.14"
 RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install 14.17"
-ADD jenkins.sh /jenkins.sh
 RUN rm -f /etc/localtime
 RUN ln -s /usr/share/zoneinfo/CET /etc/localtime
 ENV LANG=en_US.utf8
