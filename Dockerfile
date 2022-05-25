@@ -1,5 +1,10 @@
-FROM madskonradsen/centos-supervisor
+FROM centos:centos7
 
+RUN \
+  yum update -y && \
+  yum install -y epel-release && \
+  yum install -y iproute python-setuptools hostname inotify-tools yum-utils which jq && \
+  yum clean all
 RUN yum makecache
 # Chrome need the fonts and the RPM-stuff is needed to build our RPMs
 RUN yum install -y jre wget git bzip2 gnu-free-sans-fonts rpm-build redhat-rpm-config subversion
